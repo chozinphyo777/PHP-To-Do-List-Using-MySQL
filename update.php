@@ -15,8 +15,9 @@
     $query = mysqli_query($connection,$sql);
     $data = mysqli_fetch_assoc($query);
     //Update
+
+    $errorMessage = "";
     if(isset($_POST['updateBtn'])){
-        $errorMessage = "";
         $newTask = $_POST['taskName'];
         if($newTask == null || $newTask == ""){
            $errorMessage = "Task Name is required";
